@@ -1,5 +1,5 @@
 {
-	"name": "svelte-template",
+	"name": "viwf-2026",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
@@ -21,8 +21,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"d3-dsv": "^3.0.1",
-		"maplibre-gl": "^5.14.0",
-		"svelte-select": "^5.7.0"
+		"d3-dsv": "^3.0.1"
 	}
 }

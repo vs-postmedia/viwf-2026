@@ -1,90 +1,30 @@
 <script>
     // COMPONENTS
     import { onMount } from 'svelte';
-    import { csvParse } from 'd3-dsv';
-    import Chart from "$components/Chart.svelte";
-    import Map from "$components/Map.svelte";
-    import Select from "svelte-select"; // https://github.com/rob-balfre/svelte-select
-
-    
-
-    // DATA
-    // import data from "$data/data.js";
-    import { menuItems } from "$data/menu-items";
-    const dataUrl = 'https://raw.githubusercontent.com/ajstarks/dubois-data-portraits/master/challenge/2024/challenge03/data.csv';
-    const mapDataUrl = 'https://vs-postmedia-data.sfo2.digitaloceanspaces.com/misc/mobi-top-bike-data.csv';
-
-    // VARIABLES
-    let data, mapData, value;
-    const defaultSelectValue = menuItems[0].value;
-    
-    // create .env in root dir & add VITE_MAPTILER_API_KEY for Map.svelte
-    const apiKey = import.meta.env.VITE_MAPTILER_API_KEY;
+    import { writable } from 'svelte/store';
+    import Checklist from '$components/Checklist.svelte';
+    import data from '$data/data.js';
 
 
-    // REACTIVE VARIABLES
-    $: value, updateData(value);
-
-    async function fetchData(url) {
-        const resp = await fetch(url);
-        const data = await resp.text();
-
-        return csvParse(data);
+    async function clearLocalStorage() {
+        console.log('APP INIT')
+        console.log('APP DATA: ', data)
+        // clear local storage
+        localStorage.removeItem("checklist");
     }
 
-
-    function updateData(value) {
-        if (!value || !value.value) return;
-
-        console.log(value);
-    }
-
-    async function init() {
-        // fetch remote data
-        data = await fetchData(dataUrl);
-
-        // fetch map data
-        mapData = await fetchData(mapDataUrl);
-        
-        // default display selector value
-		value = defaultSelectValue;
-
-        console.log(mapData)
-    }
-
-    onMount(init);
+    onMount(clearLocalStorage);
 </script>
 
 <header>
-    <h1>VS SvelteKit Template</h1>
-    <p class="subhead">Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+    <h1>Vancouver International Wine Festival tasting room checklist: Wines to try</h1>
+    <!-- <p class="subhead">Everyone should have a plan of attack before arriving at the International Tasting Room, regardless of their level of knowledge or interest in wine.</p> -->
+    <!-- <p class="subhead">With several hundred wines to taste, choosing themes can be a useful way of navigating the room. After reviewing the extensive list of tasting-room wines, we have some themes and recommendations.</p> -->
 </header>
 
 <main>
-    <Select items={menuItems}
-        bind:value
-        change={updateData}
-        placeholder="Pick a city..."
-		showChevron="true"
-		listOpen={false}
-    />
-    
-    <Chart 
-        data={data}
-        value={value}
-    />
-    {#if mapData}
-        <Map
-            apiKey={apiKey}
-            data={mapData}
-        />
-    {/if}
+    <Checklist data={data.all} />
 </main>
-
-<footer>
-    <p class="note">NOTE: tk.</p>
-    <p class="source">Source:  <a href="https:vancouversun.com" target="_blank">TK</a></p>
-</footer>
   
 <style>
     @import '$css/normalize.css';
@@ -98,26 +38,10 @@
 	header > h1 {
 		text-align: center;
 	}
-	header .subhead {
+	/* header .subhead {
 		margin: 0 auto;
 		max-width: 525px;
 		text-align: center;
-	}
+	} */
 
-    /* COMBOBOX SELECTOR */
-  	:global(.svelte-select) {
-		margin: 1rem auto !important;
-		max-width: 250px;
-  	}
-  	:global(input:focus) {
-		outline: none;
-  	}
-
-	:global(
-		.svelte-select .selected-item,
-		.svelte-select .item,
-		.svelte-select input
-	) {
-		font-family: 'BentonSansCond-Regular', sans;
-	}
 </style>

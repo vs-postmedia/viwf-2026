@@ -1,7 +1,31 @@
-export default [
-    {
-        name: 'Example',
-        description: 'This is an example of a data file',
-        reminder: 'You can delete this, as it is just an example.'
-    }
+export default {
+    all: [
+        {"flag":"🇫🇷","wine":"A. Brumont Château Montus Madiran 2018","source":"South West France","price":"$46","checked":false,"list":"global"},
+        {"flag":"🇫🇷","wine":"Chartron et Trébuchet Pouilly-Fuissé 2023","source":"Bourgogne","price":"$50","checked":false,"list":"global"},
+        {"flag":"🇫🇷","wine":"Château Capet-Guillier Saint-Émilion Grand Cru 2019","source":"Bordeaux","price":"$57.99","checked":false,"list":"global"},
+        {"flag":"🇫🇷","wine":"Champagne Duval-Leroy, Brut Premier Cru NV","source":"Champagne","price":"$95","checked":false,"list":"global"},
+        {"flag":"🇫🇷","wine":"Château de Nages, Halos de Jupiter Châteauneuf-du-Pape 2021","source":"Rhône","price":"$89","checked":false,"list":"global"},
+        {"flag":"🇫🇷","wine":"Château Haut-Carles 2022. Fronsac","source":"Bordeaux","price":"$60","checked":false,"list":"global"},
+        {"flag":"🇫🇷","wine":"Domaine Boutinot, Les Coteaux Schisteaux Séguéret Côtes du Rhône Villages 2021","source":"Rhône","price":"$39","checked":false,"list":"global"},
+        {"flag":"🇫🇷","wine":"Domaine Laroche, Grand Cru Chablis Les Blanchots 2022","source":"Bourgogne","price":"$124","checked":false,"list":"global"},
+        {"flag":"🇫🇷","wine":"Fonjoya Delta, Tèrra Libra 2020","source":"Terrasses du Larzac","price":"$47","checked":false,"list":"global"},
+        {"flag":"🇫🇷","wine":"Gabriel Meffre, Laurus Vacqueyras Red 2020","source":"Rhône","price":"$35","checked":false,"list":"global"},
+        {"flag":"🇫🇷","wine":"Georges Duboeuf, Domaine des Quatre Vents Fleurie 2023","source":"Bourgogne","price":"$31","checked":false,"list":"global"},
+        {"flag":"🇫🇷","wine":"Gérard Bertrand Le Viala Minervois-La Livinière 2022","source":"Languedoc-Roussillon","price":"$90","checked":false,"list":"global"},
+        {"flag":"🇫🇷","wine":"M. Chapoutier, Hermitage Blanc Chante-Alouette 2021","source":"Rhône","price":"$93","checked":false,"list":"global"},
+        {"flag":"🇫🇷","wine":"Pfaff, Gewürztraminer Grand Cru Steinert 2018","source":"Alsace","price":"$35","checked":false,"list":"global"},
+        {"flag":"🇨🇦","wine":"8th Generation Vineyard, Pinot Meunier Rosé 2025","source":"Okanagan Valley, B.C.","price":"$28","checked":false,"list":"local"},
+        {"flag":"🇨🇦","wine":"Black Hills Estate Winery, Sauvignon Blanc 2024","source":"Okanagan Valley, B.C.","price":"$35","checked":false,"list":"local"},
+        {"flag":"🇨🇦","wine":"Burrowing Owl Estate Winery, Syrah 2022","source":"Okanagan Valley, B.C.","price":"$43","checked":false,"list":"local"},
+        {"flag":"🇨🇦","wine":"Da Silva Vineyards, Pinot Noir 2022","source":"Naramata Bench, B.C.","price":"$45","checked":false,"list":"local"},
+        {"flag":"🇨🇦","wine":"Da Silva Vineyards, Fumé Blanc 2022","source":"Naramata Bench, B.C.","price":"$34","checked":false,"list":"local"},
+        {"flag":"🇨🇦","wine":"Fort Berens Estate Winery, Classic Riesling 2024","source":"Lillooet, B.C.","price":"$24","checked":false,"list":"local"},
+        {"flag":"🇨🇦","wine":"Hester Creek Estate Winery, Undici 2022","source":"Golden Mile Bench, B.C.","price":"$59.99","checked":false,"list":"local"},
+        {"flag":"🇨🇦","wine":"Hester Creek Estate Winery, Cabernet Franc 2022","source":"Golden Mile Bench, B.C.","price":"$30","checked":false,"list":"local"},
+        {"flag":"🇨🇦","wine":"Moraine Estate, Pinot Noir 2023","source":"Naramata Bench, B.C.","price":"$33","checked":false,"list":"local"},
+        {"flag":"🇨🇦","wine":"Sage Hayward Vineyards, Pinot Noir 2023","source":"Gulf Islands, B.C.","price":"$40","checked":false,"list":"local"},
+        {"flag":"🇨🇦","wine":"Summerhill Pyramid Winery, Cipes Traditional Cuvée 2004","source":"South Kelowna Slopes, B.C.","price":"$250","checked":false,"list":"local"},
+        {"flag":"🇨🇦","wine":"Tightrope Winery, Syrah 2022","source":"Naramata Bench, B.C.","price":"$43","checked":false,"list":"local"},
+        {"flag":"🇨🇦","wine":"Unsworth Vineyards, Pinot Gris","source":"Cowichan Valley, B.C.","price":"$27","checked":false,"list":"local"}
 ]
+};
